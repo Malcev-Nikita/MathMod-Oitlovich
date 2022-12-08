@@ -1,11 +1,3 @@
-/**
-* Решение задачи линейного программирования
-* Табличный Симпликс метот
-* 
-* Made by Tod
-* http://tj-s.ru/tod/
-*/
-
 $(document).ready(function(){
 	// Задаем глобальную переменную
 	max_x = 2;
@@ -51,7 +43,7 @@ $(document).ready(function(){
 	})
 	
 	// Добавляем ограничение
-	$('.ogranichenie_add a').live('click', function(){
+	$('.ogranichenie_add').live('click', function(){
 		var html_inputs = '<input type="text" value ="0" />X1';
 		for (var q = 2; q<=max_x;q++)
 			html_inputs += '+<input type="text" value ="0" />X'+q;
@@ -62,7 +54,7 @@ $(document).ready(function(){
 		return false;
 	})	
 	// Начмнаем считать
-	$('.submit a').live('click', function(){
+	$('.submit').live('click', function(){
 	$('#result').html(' '); // Очищаем поле результатов
 		var matrix = new Array();
 	//	var count_ogr = $('#ogranichenie_block .ogranichenie').length;
@@ -331,8 +323,3 @@ function minelm(v, dispnum, not_last){
 		return m
 	}
 }
-
-
-
-// Made by Tod
-// http://tj-s.ru/tod/

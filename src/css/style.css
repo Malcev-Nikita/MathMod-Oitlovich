@@ -2,7 +2,9 @@ body{
 	font-size:14px;
 	margin:0px;
 	padding:0px;
-	font-family: "Times New Roman", Times, serif;	
+	font-family: sans-serif;
+	background-color: #323c49;
+	color: white;
 }
 #page{
 	width:700px;
@@ -10,7 +12,6 @@ body{
 	padding: 20px;
 	border-radius:10px;
 	font-weight: bold;
-	box-shadow:  0 0 10px #00338b;	
 }
 #page #info{
 	margin: 10px 30px 70px 30px;
@@ -23,13 +24,15 @@ body{
 #page #info:hover{
 	opacity: 1;
 }
-#page #info .title{
+.title, .description{
 	width:100%;
 	text-align:center;
-	font-size: 18px;
-	color: #042f77;
-	text-shadow:  1px 1px 10px #00338b;
+	font-size: 32px;
 	margin-bottom: 15px;
+}
+.description{
+	font-size: 18px;
+	margin-bottom: 20%;
 }
 #page #info .right{
 	width: 100%;
@@ -40,13 +43,10 @@ body{
 	display:none;
 	color: #6d6d6d;
 }
-#page #info  a{
-	color: #042f77;
-}
 a{
 	text-decoration:none;
-	color: #042f77;
-	font-weight:bold;
+	outline: none;
+	color: white;
 }
 table td, table, table th{
 	border-collapse: collapse;
@@ -105,4 +105,30 @@ table .selected .selected{
 }
 .ogranichenie{
 	display:none;
+}
+.ogranichenie_add, .submit{
+	width: 250px;
+	height: 50px;
+	background-color: rgba(255, 255, 255, 0);
+	color: #fff;
+	border: 2px solid #fff;
+	border-radius: 10px;
+	font-weight: 700;
+	margin-top: 20px;
+	font-size: 17px;
+	cursor: pointer;
+	transition: 0.3s;
+}
+.ogranichenie_add:hover, .submit:hover{
+	background-color: black;
+	border: 2px solid #000;
+	transition: 0.3s;
+	width: 255px;
+	height: 53px;
+}
+.submit:hover{
+	width: 155px;
+}
+.submit{
+	width: 150px;
 }
