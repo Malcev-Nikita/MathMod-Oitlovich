@@ -119,37 +119,36 @@ $(document).ready(function(){
 	
 /*################## ШАГ1 ##################*/
 function step1(){
-		iteration++;
-		// находим ведущую строку
-		var min_k_num = minelm(free, true, true);
-		
-		// находим ведущий столбец		
-		var min_k1 = minelm(free)
-		if (minelm(matrix[min_k_num]) < 0){
-			var min_k1_num = minelm(matrix[min_k_num], true, true);
-		}else{
-			alert('Условия задачи несовместны и решений у нее нет');
-			return false;
-		}
-		// Печатаем таблицу и выделяем на ней ведущие строку и столбец
-		print_table(matrix, min_k_num, min_k1_num); 
-		// Обновляем индексы элементов по горизонтале и вертикале
-		tmp = horisont_x[min_k1_num];
-		horisont_x[min_k1_num] = vertical_x[min_k_num];
-		vertical_x[min_k_num] = tmp;
-		
+	iteration++;
+	// находим ведущую строку
+	var min_k_num = minelm(free, true, true);
+	
+	// находим ведущий столбец		
+	var min_k1 = minelm(free)
+	if (minelm(matrix[min_k_num]) < 0){
+		var min_k1_num = minelm(matrix[min_k_num], true, true);
+	}
+	else {
+		alert('Условия задачи несовместны и решений у нее нет');
+		return false;
+	}
+	// Печатаем таблицу и выделяем на ней ведущие строку и столбец
+	print_table(matrix, min_k_num, min_k1_num); 
+	// Обновляем индексы элементов по горизонтале и вертикале
+	tmp = horisont_x[min_k1_num];
+	horisont_x[min_k1_num] = vertical_x[min_k_num];
+	vertical_x[min_k_num] = tmp;
+	
 
 	// Замена	
-		update_matrix(min_k_num, min_k1_num);
+	update_matrix(min_k_num, min_k1_num);
 	// матрица свободных членов
-		for (var k=0; k < matrix.length; k++){
-			free[k] = matrix[k][max_x];
-		}
-		
-
-		if (minelm(free, false, true) < 0 && iteration < 10) // нужно ли еще разок пройти второй шаг ?
-		if (confirm("продолжаем Шаг 1_"+iteration+" ?")) // Да здравсвует рекурсия, но спросим (чтобы комп не завис)
-			step1();
+	for (var k=0; k < matrix.length; k++){
+		free[k] = matrix[k][max_x];
+	}
+	
+	if (minelm(free, false, true) < 0 && iteration < 10) // нужно ли еще разок пройти второй шаг ?
+	if (confirm("продолжаем Шаг 1_"+iteration+" ?")) step1();
 	
 }
 
