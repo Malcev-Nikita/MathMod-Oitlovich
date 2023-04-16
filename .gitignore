@@ -1,2 +1,4 @@
-/index.exe
-/output
+index.exe
+output
+node_modules
+package-lock.json

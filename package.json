@@ -1,0 +1,23 @@
+{
+  "name": "mathmod-oitlovich",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Malcev-Nikita/MathMod-Oitlovich.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Malcev-Nikita/MathMod-Oitlovich/issues"
+  },
+  "homepage": "https://github.com/Malcev-Nikita/MathMod-Oitlovich#readme",
+  "devDependencies": {
+    "jest": "^29.5.0"
+  }
+}
